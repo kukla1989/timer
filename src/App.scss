@@ -1,6 +1,18 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
+
+  background-image: url('/src/assets/water_drops.png');
+  background-repeat: no-repeat;
+  background-size: cover;
   text-align: center;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  backdrop-filter: blur(10px);
 }

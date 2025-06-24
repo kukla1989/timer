@@ -1,9 +1,10 @@
 import './App.scss'
+import Main from "./components/Main/Main.jsx";
 
 function App() {
   return (
     <div className='app'>
-      app
+      <Main />
     </div>
   )
 }

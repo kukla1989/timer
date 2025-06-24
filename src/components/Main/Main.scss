@@ -1,0 +1,21 @@
+@use '../../vars' as *;
+
+.main {
+  width: 70%;
+
+  background-color: #092143CC;
+  border-radius: 36px;
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.title {
+  font-weight: 100;
+  font-size: 90px;
+}
+
+.t-minus {
+  margin-top: 43px;
+  font-size: 32px;
+  font-weight: 600;
+  color: $cBlueLight;
+}
