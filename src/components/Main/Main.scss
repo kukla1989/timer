@@ -1,4 +1,5 @@
-@use '../../vars' as *;
+@use '../../_uttils/vars' as *;
+@use '../../_uttils/mixins' as *;
 
 .main {
   width: 70%;
@@ -6,11 +7,20 @@
   background-color: #092143CC;
   border-radius: 36px;
   box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.5);
+
+  @include onPhone {
+    width: 90%;
+    border-radius: 10px;
+  }
 }
 
 .title {
   font-weight: 100;
   font-size: 90px;
+
+  @include onPhone {
+    font-size: 35px;
+  }
 }
 
 .t-minus {
@@ -18,4 +28,9 @@
   font-size: 32px;
   font-weight: 600;
   color: $cBlueLight;
+
+  @include onPhone {
+    margin-top: 20px;
+    font-size: 18px;
+  }
 }
