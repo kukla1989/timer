@@ -1,6 +1,6 @@
 import React from 'react';
 import './Main.scss';
-import TimeUnit from "../TimeUnit/TimeUnit.jsx";
+import TimeUnit from "../TimeUnit/TimeUnit";
 
 function Main() {
   return (<div className='main'>
