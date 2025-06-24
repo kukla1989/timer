@@ -2,13 +2,13 @@
 @use '../../_uttils/mixins' as *;
 
 .main {
-  width: 70%;
+  width: 1049px;
 
   background-color: #092143CC;
   border-radius: 36px;
   box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.5);
 
-  @include onPhone {
+  @media (max-width: 1100px) {
     width: 90%;
     border-radius: 10px;
   }
@@ -32,5 +32,17 @@
   @include onPhone {
     margin-top: 20px;
     font-size: 18px;
+  }
+}
+
+.timer {
+  margin: 43px 86px;
+  display: flex;
+  justify-content: center;
+  gap: 26px;
+
+  @include onPhone {
+    margin: 20px 10px;
+    gap: 10px;
   }
 }

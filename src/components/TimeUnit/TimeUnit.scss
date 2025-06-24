@@ -1,0 +1,25 @@
+@use '../../_uttils/vars' as *;
+@use '../../_uttils/mixins' as *;
+
+.time-unit {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: $cBlack;
+  border-radius: 22px;
+}
+
+.time {
+  font-size: 64px;
+  font-weight: 1000;
+}
+
+.time-type {
+  color: $cBlueLight;
+  font-size: 16px;
+  font-weight: 300;
+}
