@@ -30,10 +30,13 @@ function Main() {
     <div className="t-minus">t - minus:</div>
 
     <div className="timer">
-      <TimeUnit/>
-      <TimeUnit/>
-      <TimeUnit/>
-      <TimeUnit/>
+      {(['days', 'hours', 'minutes', 'seconds'] as const).map((unit) => (
+        <TimeUnit
+          key={unit}
+          timeType={unit}
+          timeValue={timeLeft[unit]}
+        />
+      ))}
     </div>
   </div>);
 }

@@ -1,8 +1,13 @@
 import './TimeUnit.scss';
 
-export default function TimeUnit() {
+type TimeUnitProps = {
+  timeValue: number;
+  timeType: string;
+}
+
+export default function TimeUnit({timeValue, timeType}: TimeUnitProps) {
   return <div className='time-unit'>
-    <div className="time">24</div>
-    <div className="time-type">hours</div>
+    <div className="time">{timeValue}</div>
+    <div className="time-type">{timeType}</div>
   </div>;
 }
