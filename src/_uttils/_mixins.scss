@@ -1,3 +1,5 @@
+@use './vars' as *;
+
 @mixin onPhone {
   @media (max-width: 768px) {
     @content;
@@ -7,5 +9,30 @@
 @mixin onDesktop {
   @media (min-width: 768px) {
     @content;
+  }
+}
+
+@mixin input {
+  width: 364px;
+  height: 40px;
+  margin: 30px auto;
+
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  text-align: center;
+}
+
+@mixin button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $cBlack;
+  transition: box-shadow $transitionTime ease;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+    background-color: #2c556e;
   }
 }

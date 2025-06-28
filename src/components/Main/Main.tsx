@@ -3,6 +3,7 @@ import React, {useEffect} from 'react';
 import './Main.scss';
 import TimeUnit from "../TimeUnit/TimeUnit";
 import {TimeRemaining} from "../../_uttils/_types";
+import ChangeTimer from '../ChangeTimer/ChangeTimer';
 
 const targetDate = new Date('2025-07-09T00:00:00')
 
@@ -25,7 +26,7 @@ function Main() {
   }, [])
 
   return (<div className='main'>
-    <div className="title">ready for applying</div>
+    <div className="main-title">ready for applying</div>
 
     <div className="t-minus">t - minus:</div>
 
@@ -38,6 +39,8 @@ function Main() {
         />
       ))}
     </div>
+
+    <ChangeTimer />
   </div>);
 }
 
