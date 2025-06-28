@@ -5,10 +5,18 @@ import TimeUnit from "../TimeUnit/TimeUnit";
 import {TimeRemaining} from "../../_uttils/_types";
 import ChangeTimer from '../ChangeTimer/ChangeTimer';
 
-const targetDate = new Date('2025-07-09T00:00:00')
+const dateLS = localStorage.getItem('targetDate') || '2025-07-09T00:00:00';
 
 function Main() {
+  const [targetDate, setTargetDate] = React.useState<Date>(new Date(dateLS));
   const [timeLeft, setTimeLeft] = React.useState<TimeRemaining>(getTimeRemaining(targetDate));
+  const [title, setTitle] = React.useState<string>('ready for applying');
+  const changeTimerInfo = (days: number, title: string) => {
+    const newDate = new Date(new Date().getTime() + days * 24 * 60 * 60 * 1000);
+    setTargetDate(newDate);
+    localStorage.setItem('targetDate', newDate.toISOString());
+    setTitle(title);
+  }
   useEffect(() => {
     const intervalID: number = setInterval(() => {
       setTimeLeft(_ => {
@@ -23,10 +31,10 @@ function Main() {
     }, 1000);
 
     return () => clearInterval(intervalID);
-  }, [])
+  }, [targetDate])
 
   return (<div className='main'>
-    <div className="main-title">ready for applying</div>
+    <div className="main-title">{title}</div>
 
     <div className="t-minus">t - minus:</div>
 
@@ -40,7 +48,7 @@ function Main() {
       ))}
     </div>
 
-    <ChangeTimer />
+    <ChangeTimer changeTimerInfo={changeTimerInfo}/>
   </div>);
 }
 
