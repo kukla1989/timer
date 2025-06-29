@@ -1,9 +1,13 @@
 @use '../../_uttils/vars' as *;
 @use '../../_uttils/mixins' as *;
 
-.change-timer {
+.change-timer-btn {
   @include input;
   @include button;
+}
+
+.error {
+  color: $cRed;
 }
 
 .overlay {
